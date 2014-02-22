@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ Off Canvas
+/ -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ RAPPEL : IL EST IMPERATIF D'APPELER LE FICHIER ``offcanvas.css`` DANS UN 
+/ FICHIER EXTERNE POUR QUE CA FONCTIONEN SOUS IE8 AVEC ``respond.js``
+/ PERDU 2 HEURES A ESSAYER D'AJOUTER LE CODE EN DUR DANS <style></style>
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+	
+	.row-offcanvas {
+		position: relative;
+		-webkit-transition: all 0.25s ease-out;
+		-moz-transition: all 0.25s ease-out;
+		transition: all 0.25s ease-out;
+	}
+
+	.row-offcanvas-right
+		.sidebar-offcanvas {
+		right: -50%; /* 6 columns */
+	}
+
+	.row-offcanvas-left
+		.sidebar-offcanvas {
+		left: -50%; /* 6 columns */
+	}
+
+	.row-offcanvas-right.active {
+		right: 50%; /* 6 columns */
+	}
+
+	.row-offcanvas-left.active {
+		left: 50%; /* 6 columns */
+	}
+
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+		width: 50%; /* 6 columns */
+	}
+	
+	#togleSidebar {
+		display:block;
+	}
+}           
+
+@media screen and (min-width: 767px) {
+	#togleSidebar {
+		display:none;
+	}
+}

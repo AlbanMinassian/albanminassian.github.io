@@ -1,0 +1,136 @@
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ overflow-x: hidden  => présent dans exemple ``http://getbootstrap.com/examples/offcanvas/offcanvas.css``
+/ pas nécessaire sous IE8 ou Firefox, mais si absent alors Chrome affiche un barre de défilement horizontal très inesthétique 
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+html, body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}    
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ Sticky footer styles
+/ http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*
+html, body {
+	height: 100%; 
+}
+#wrapper {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+}
+footer {
+	height: 60px; 
+	background-color: #f5f5f5;
+	border-top: 1px solid;
+	border-color: #e7e7e7;
+	padding-top : 10px;
+	text-align:center;
+}
+*/
+
+footer {
+	border-top: 1px solid;
+	border-color: #e7e7e7;
+	padding-top : 10px;
+	text-align:center;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ twbs 3 ne permet pas défaut de créer des badges colorés
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.badge-important{
+	background-color:#b94a48;
+}        
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ navbar principal
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.navbar {
+	border-radius: 0px; /* sinon default twbs : border-radius: 4px*/
+	margin-bottom: 0px; /*sinon default twbs : margin-bottom: 20px;*/
+}
+.navbar-default .navSetHeight{
+	height: 50px;
+}
+li.navBorderLeft {
+	border-left: 1px solid #DDD;
+}
+li.navBorderRight {
+	border-right: 1px solid #DDD;
+}
+.nav > li > a {
+	padding: 15px; /* sinon mal aligné */
+}             
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ Note la classe ``.navbar-nav`` permet d'avoir le texte en noir. Si absent le texte est en bleu
+/ mais si ``.navbar-nav`` est présent, twbs affiche un margin inélégant si on réduit en taille mobile
+/ donc décision de retirer ``.navbar-nav`` et de créer un ``.navbar-nav-hraccess`` où je vais dupliquer ce qui est utile
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.navbar-default .navbar-nav-hraccess>.open>a, .navbar-default .navbar-nav-hraccess>.open>a:hover, .navbar-default .navbar-nav-hraccess>.open>a:focus {
+	color: #555;
+	background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav-hraccess>li>a {
+	color: #777;
+}        
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ sidebar
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#sidebarAndMainContent {
+	border: 1px solid #ccc;
+	border-width: 0 0 0 1px;
+}        
+#sidebarAndMainContent {
+	border: 1px solid #ccc;
+	border-width: 0 0 1px 0 ;
+}        
+#maincontent {
+	border: 1px solid #ccc;
+	border-width: 0 0 0 1px;
+	/*background: #FFE680;*/
+	
+}        
+
+main {
+	padding:15px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ breadcrumb
+/ L'icone est placé dans <a> pour être cliquable qaund on masque le texte en mode mobile
+/ mais alors l'icone devient bleu et le texte aussi ... donc corriger
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#breadcrumbs > ul{
+	border: 1px solid #ccc;
+	border-width: 0 0 1px 0;
+}
+ul.breadcrumb{
+	margin-bottom: 0px; /*forcer sion 15px par défaut de bootstrap*/
+}
+.breadcrumb > li + li:before {
+	content: "/ ";  /*modifier le séparateur ``/`` par ``>``        */
+}
+ul.breadcrumb a {
+	color: #777777; /* forcer couleur par defaut bootstrap sinon est bleu car icone placé volontairement dans <a> */
+}
+ul.breadcrumb a span{
+	margin-left:5px; /* ajouter espace entre icone et texte*/
+}
+.breadcrumb {
+	border-radius: 0px; /* sinon default twbs : border-radius: 4px*/
+}       
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ corriger twbs page-header
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.page-header { padding-bottom: 0px; margin: 0px 0 0px; } /* corriger sinon .page-header { padding-bottom: 9px; margin: 40px 0 20px;  } peu esthétique*/
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------
+/ Recherche
+/ placé dans la barre du breadcrumb
+/ @TODO
+/ ------------------------------------------------------------------------------------------------------------------------------------------------------- */
